@@ -1,15 +1,20 @@
 {
   "name": "csrf-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "demo app to demonstrate the usage of csrf",
   "main": "server-original.js",
   "scripts": {
     "original": "node original/server.js",
     "attacker": "node attacker/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "csrf",
+    "security",
+    "node",
+    "web"
+  ],
+  "author": "Shai Atias",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.15.2",
     "consolidate": "^0.14.5",
