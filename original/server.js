@@ -28,6 +28,11 @@ app.use(parseBody)
 
 // CSRF Protection:
 app.use(cookieParser());
+
+/*
+ * for the demo
+ * comment \ uncomment the following 
+ */ 
 // app.use(csrf({ cookie:true }));
 
 // app urls
